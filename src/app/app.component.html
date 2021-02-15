@@ -1,0 +1,52 @@
+<div class="content-container" [ngClass]="{'lightContent': mode === 'light'}">
+  <div class="header">
+    <div>
+      <h2>Social Media Dashboard</h2>
+      <h3 class="subTitle">Total Followers: 23,004 </h3>
+    </div>
+    <div class="toggle-button-container">
+      <span class="nickname">Dark Mode</span>
+      <label class="switch">
+        <input (click)="setMode()" type="checkbox" [checked]="mode === 'dark'? true: false">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+  <div class="cards-container">
+    <div *ngFor="let network of networks" class="card bordertest" [ngClass]="{'igBorder': network == 'instagram', 
+    'fbBorder': network == 'facebook', 'twBorder': network == 'twitter', 'ytBorder' : network == 'youtube' }">
+      <div class="nick-container">
+        <img src="assets/images/icon-{{network}}.svg" alt="">
+        <span class="nickname">@nathanf</span>
+      </div>
+      <div>
+        <p class="card-value">1987</p>
+      </div>
+      <div>
+        <span class="followers-label">F O L L O W E R S</span>
+      </div>
+      <div>
+        <img src="assets/images/icon-up.svg" alt="">
+        <span class="grow-label">12 today</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>Overview - Today</h2>
+  </div>
+  <div class="cards-container">
+    <div *ngFor="let overview of overviewList" class="card overview">
+      <div>
+        <span class="nickname">{{overview.type}}</span>
+        <img src="assets/images/icon-{{overview.network}}.svg" alt="">
+      </div>
+      <div>
+        <span class="overview-value">{{overview.value}}</span>
+        <span class="overview-variation" [ngClass]="{'negative': overview.variation < 0}">
+          <img src="assets/images/icon-{{ overview.variation < 0? 'down': 'up'}}.svg"
+            alt="">{{overview.variation < 0? overview.variation * -1: overview.variation}}%
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

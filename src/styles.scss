@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/Inter-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: InterBold;
+  src: url("./assets/fonts/Inter-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: InterThin;
+  src: url("./assets/fonts/Inter-Light.ttf") format("opentype");
+}
+
+.dark {
+  background: linear-gradient(
+    to top,
+    hsl(230, 17%, 14%) 0%,
+    hsl(230, 17%, 14%) 80%,
+    hsl(233, 19%, 17%) 80%,
+    hsl(233, 19%, 17%) 100%
+  );
+  width: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-color: hsl(230, 17%, 14%);
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    color: #fff;
+    font-family: Inter;
+    font-family: "Inter";
+  }
+}
+
+.light {
+  background: linear-gradient(
+    to top,
+    #fff 0%,
+    #fff 80%,
+    #f0f0f0 80%,
+    #f0f0f0 100%
+  );
+  width: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-color: #fff;
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+    color: black;
+    font-family: Inter;
+    font-family: "Inter";
+  }
+}
